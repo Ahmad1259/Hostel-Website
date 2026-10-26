@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# Local environment and secrets — never commit
+.env
+.env.*
+*.local
+!.env.example
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+# Local databases, dumps, uploads during development
+data/
+*.sqlite
+*.dump
+backups/
+media-local/
+
+# Logs
+*.log
+logs/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode//*
+!.vscode/extensions.json
