@@ -37,10 +37,14 @@ Docker install on laptop for local dev); (C) PostgreSQL on a genuinely
 long-lived free tier (Supabase/Neon) with Oracle migration path documented.
 Decision and evidence will be recorded in `docs/architecture.md` and
 `docs/free-tier-cost-review.md`.
-Status: open — owner approval required before Phase 2.
+Status: research complete 2026-10-26; narrowed to Path A (OCI Always Free VM + Oracle 23ai) vs Path C (Neon Postgres + Render free). Evidence in docs/free-tier-cost-review.md. Owner approval pending.
 
 **D-005 · 2026-10-26 · WhatsApp**
 No unofficial WhatsApp Web automation in the core design. Notification service
 is provider-independent with honest delivery records; a real provider is
 selected (or explicitly deferred) during Phase 7 after verifying current costs.
 Status: adopted as policy.
+
+**D-004 addendum · 2026-10-26 · Verified research**
+Oracle Always Free ATP is officially not production-grade (auto-stop after 7 days inactive, reclaim after 90 days, ~3-6 concurrent HTTP users, card required at signup). OCI free ARM allowance cut to 2 OCPU/12 GB in June 2026. WhatsApp lost its free messaging tier (per-message billing since Oct 2025/2026); unofficial automation gets numbers banned. Vercel Hobby is non-commercial-only; Railway/Fly are no longer effectively free. The only honest $0 topologies are Path A or Path C; notifications start as in-app + email with a provider-adapter ready for paid WhatsApp later.
+Status: adopted as factual basis for the D-004 final choice.

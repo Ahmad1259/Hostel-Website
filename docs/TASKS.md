@@ -11,11 +11,11 @@ Legend: ⬜ not started · 🔵 in progress · 🟡 awaiting review · ✅ done 
 |---|---|---|---|
 | 1.1 | Inspect environment, clone repo, establish `main` | — | ✅ |
 | 1.2 | Verify available skills; record what was actually used | — | ✅ |
-| 1.3 | Research Oracle free options + hosting alternatives (with sources) | — | 🔵 |
-| 1.4 | `docs/architecture.md` incl. DB decision + alternatives | 1.3 | ⬜ |
+| 1.3 | Research Oracle free options + hosting alternatives (with sources) | — | ✅ |
+| 1.4 | `docs/architecture.md` incl. DB decision + alternatives | 1.3 | 🟡 awaiting owner choice A/C |
 | 1.5 | `docs/database-schema.md` + ERD | — | 🟡 draft |
 | 1.6 | `docs/role-permission-matrix.md` | — | 🟡 draft |
-| 1.7 | `docs/free-tier-cost-review.md` | 1.3 | ⬜ |
+| 1.7 | `docs/free-tier-cost-review.md` | 1.3 | ✅ |
 | 1.8 | `docs/backup-and-recovery.md` | 1.4 (engine choice) | 🟡 draft, engine section pending |
 | 1.9 | `docs/COLLABORATION.md`, task board, decision log | — | ✅ |
 | 1.10 | **GATE: owner approves architecture & stack** | 1.4, 1.5, 1.6, 1.7 | ⬜ |

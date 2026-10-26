@@ -72,28 +72,26 @@ required today.
 - **Audit:** append-only `audit_events` for every state change of money,
   assignments, roles and documents.
 
-## 4. Data strategy - PENDING final choice
+## 4. Data strategy - decision awaiting owner approval
 
-Local machine has Node 24 + Git but **no Docker and no Python**, which shapes
-the options. The full comparison with sources and limits is in
-`docs/free-tier-cost-review.md`. Summary of paths:
+Research completed 2026-10-26 (task 1.3); full evidence in
+`docs/free-tier-cost-review.md`. Two viable $0 paths remain:
 
-- **Path A - Oracle Cloud Always Free Autonomous DB (23ai) + free app host.**
-  Matches the brief's Oracle requirement; connectivity via the thin driver over
-  HTTPS with wallet credentials. Risks to verify: signup requirements (payment
-  method), free resource ceilings, reachability from a third-party free host.
-- **Path B - Oracle 23ai Free on Always-Free ARM compute** hosting app + DB
-  together. Self-contained and genuinely Oracle; but requires installing Docker
-  on the laptop for local development and more self-management (backups, TLS).
-- **Path C - PostgreSQL on a long-lived free tier** (e.g. Supabase/Neon free
-  plan) with Oracle-compatible discipline kept in the schema; migration path
-  to Oracle documented. Cheapest to operate; deviates from the brief's stated
-  preference - allowed by section 7 of the master prompt if Oracle's complexity
-  is shown to be excessive, **with owner approval**.
+- **Path A - Oracle-first:** OCI Always Free ARM VM (2 OCPU/12 GB after the
+  June 2026 reduction) running Node/Express + Oracle Database 23ai + our
+  scheduler, with daily dumps to separate storage. Requires an owner-registered
+  OCI account (card on file for the hold), a local Docker install for dev, and
+  acceptance of free-instance reclaim risk during the pilot.
+- **Path C - Postgres-first (fallback):** Neon free Postgres (1 GB, long-lived)
+  + Render free web service (cold starts; no free cron - reminders via an
+  external once-daily trigger on a protected endpoint). Simplest operations;
+  deviates from the brief's Oracle preference, which master-prompt section 7
+  allows if documented and approved.
 
-Whatever is chosen, the logical model in `database-schema.md` does not change;
-only DDL, drivers and ops scripts do.
-
+Recommendation: **Path A** if the owner can register OCI and tolerate pilot-era
+outage risk; otherwise **Path C** to keep momentum, keeping the schema
+engine-neutral so an Oracle migration stays a DDL task. Both preserve every
+integrity rule in `database-schema.md`.
 ## 5. Deployment topology (zero-budget-first)
 
 - Develop locally with Node 24; local database for the chosen engine (or the
