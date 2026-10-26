@@ -48,3 +48,8 @@ Status: adopted as policy.
 **D-004 addendum · 2026-10-26 · Verified research**
 Oracle Always Free ATP is officially not production-grade (auto-stop after 7 days inactive, reclaim after 90 days, ~3-6 concurrent HTTP users, card required at signup). OCI free ARM allowance cut to 2 OCPU/12 GB in June 2026. WhatsApp lost its free messaging tier (per-message billing since Oct 2025/2026); unofficial automation gets numbers banned. Vercel Hobby is non-commercial-only; Railway/Fly are no longer effectively free. The only honest $0 topologies are Path A or Path C; notifications start as in-app + email with a provider-adapter ready for paid WhatsApp later.
 Status: adopted as factual basis for the D-004 final choice.
+
+**D-006 · 2026-10-26 · Phase 1 gate result (owner decision)**
+Owner approved Phase 1 with the production database/hosting choice DEFERRED to Phase 8 ('build locally first, choose later'). Consequence: local development uses PostgreSQL locally (free Windows installer, standard port) because it is one-click for a beginner, supports every integrity rule in the schema (partial unique indexes, transactions, numeric money types), and keeps the eventual move to Oracle Autonomous DB / OCI a DDL-and-driver task rather than a redesign. The Path A vs Path C comparison stands; re-verify limits at deploy time before any sign-up. No cloud account, card, or paid resource is involved in development.
+Why: momentum without lock-in; zero cost; zero ops burden during build.
+Status: adopted. Supersedes the 'open' state of D-004 for development purposes; D-004 remains open for production.

@@ -18,7 +18,7 @@ Legend: ⬜ not started · 🔵 in progress · 🟡 awaiting review · ✅ done 
 | 1.7 | `docs/free-tier-cost-review.md` | 1.3 | ✅ |
 | 1.8 | `docs/backup-and-recovery.md` | 1.4 (engine choice) | 🟡 draft, engine section pending |
 | 1.9 | `docs/COLLABORATION.md`, task board, decision log | — | ✅ |
-| 1.10 | **GATE: owner approves architecture & stack** | 1.4, 1.5, 1.6, 1.7 | ⬜ |
+| 1.10 | **GATE: owner approves architecture & stack** | 1.4, 1.5, 1.6, 1.7 | ✅ passed 2026-10-26 — stack approved, production DB/hosting deferred to Phase 8 (D-006); local dev on PostgreSQL |
 
 ## Phase 2 — Design system & public prototype
 

@@ -72,7 +72,7 @@ required today.
 - **Audit:** append-only `audit_events` for every state change of money,
   assignments, roles and documents.
 
-## 4. Data strategy - decision awaiting owner approval
+## 4. Data strategy - production choice deferred (owner decision D-006)
 
 Research completed 2026-10-26 (task 1.3); full evidence in
 `docs/free-tier-cost-review.md`. Two viable $0 paths remain:
